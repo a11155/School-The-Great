@@ -3,17 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.project1.Managers;
-import com.mycompany.project1.States.CheckStudentState;
-import com.mycompany.project1.States.AddStudentState;
-import com.mycompany.project1.States.CheckSchoolState;
-import com.mycompany.project1.States.SettingsState;
-import com.mycompany.project1.States.AddSchoolState;
+import com.mycompany.project1.States.Settings.Students.CheckStudentState;
+import com.mycompany.project1.States.Settings.Students.AddStudentState;
+import com.mycompany.project1.States.Settings.Schools.CheckSchoolState;
+import com.mycompany.project1.States.Settings.SettingsState;
+import com.mycompany.project1.States.Settings.Schools.AddSchoolState;
 import com.mycompany.project1.States.NullState;
-import com.mycompany.project1.States.EditStudentMenuState;
+import com.mycompany.project1.States.Settings.Students.EditStudentMenuState;
 import com.mycompany.project1.States.MainMenuState;
-import com.mycompany.project1.States.EditSchoolMenuState;
+import com.mycompany.project1.States.Settings.Schools.EditSchoolMenuState;
 import com.mycompany.project1.States.IState;
-import com.mycompany.project1.States.States;
+import com.mycompany.project1.States.State;
 
 /**
  *
@@ -39,7 +39,7 @@ public class StateManager {
     }
     
     
-    private void setState(States.state state)
+    private void setState(State.state state)
     {
         currentState = convertState(state);
     }
@@ -47,24 +47,24 @@ public class StateManager {
     private void setState(IState state){
         currentState = state;
     }
-    private IState convertState(States.state state){
+    private IState convertState(State.state state){
         
         switch(state){
-            case Settings:
+            case settings:
                 return new SettingsState();
-            case MainMenu:
+            case mainMenu:
                 return new MainMenuState();
-            case EditSchoolMenu:
+            case editSchoolMenu:
                 return  new EditSchoolMenuState();
-            case AddSchool:
+            case addSchool:
                 return new AddSchoolState();
-            case CheckSchool:
+            case checkSchool:
                 return new CheckSchoolState();
-            case EditStudentMenu:
+            case editStudentMenu:
                 return new EditStudentMenuState();
-            case AddStudent:
+            case addStudent:
                 return new AddStudentState();
-            case CheckStudent:
+            case checkStudent:
                 return new CheckStudentState();
             
                 
@@ -76,7 +76,7 @@ public class StateManager {
     }
     
     public void nextState(){
-        States.state state = currentState.handle();
+        State.state state = currentState.handle();
         
         setState(state);
         

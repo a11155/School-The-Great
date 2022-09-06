@@ -5,6 +5,7 @@
 package com.mycompany.project1.School.Subjects;
 
 import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.School.Subject;
 
 /**
  *
@@ -18,8 +19,8 @@ public class GeographySubject implements ISubject{
     }
 
     @Override
-    public SubjectFactory.SubjectEnum getSubjectEnum() {
-        return SubjectFactory.SubjectEnum.Geography;
+    public Subject getSubjectEnum() {
+        return Subject.Geography;
     }
     
     

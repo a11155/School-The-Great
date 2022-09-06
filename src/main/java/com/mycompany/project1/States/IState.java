@@ -9,5 +9,5 @@ package com.mycompany.project1.States;
  * @author Andrii
  */
 public interface IState {
-    States.state handle();
+    State.state handle();
 }

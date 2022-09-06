@@ -5,6 +5,7 @@
 package com.mycompany.project1.School.Subjects;
 
 import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.School.Subject;
 import java.io.Serializable;
 
 /**
@@ -16,5 +17,5 @@ public interface ISubject extends Serializable {
  //   void enroll(Student s);
 //    void disenroll(Student s);
     int getGrade();
-    SubjectFactory.SubjectEnum getSubjectEnum();
+    Subject getSubjectEnum();
 }

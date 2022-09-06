@@ -5,6 +5,7 @@
 package com.mycompany.project1.School.Subjects;
 
 import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.School.Subject;
 
 /**
  *
@@ -18,10 +19,9 @@ public class PhysicsSubject implements ISubject{
     }
 
     @Override
-    public SubjectFactory.SubjectEnum getSubjectEnum() {
-        return SubjectFactory.SubjectEnum.Physics;
+    public Subject getSubjectEnum() {
+        return Subject.Physics;
     }
-    
       @Override
     public String toString(){
         return "Physics";

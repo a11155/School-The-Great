@@ -5,8 +5,8 @@
 
 package com.mycompany.project1;
 
-import com.mycompany.project1.States.States.NullState;
-import com.mycompany.project1.States.AddSchoolState;
+import com.mycompany.project1.States.State.NullState;
+import com.mycompany.project1.States.Settings.Schools.AddSchoolState;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;

@@ -4,6 +4,7 @@
  */
 package com.mycompany.project1.Factories;
 
+import com.mycompany.project1.School.Subject;
 import com.mycompany.project1.School.Subjects.MathSubject;
 import com.mycompany.project1.School.Subjects.PhysicsSubject;
 import com.mycompany.project1.School.Subjects.EnglishSubject;
@@ -21,58 +22,13 @@ import java.util.Map;
 public class SubjectFactory {
    
     
-    static private final HashMap<String, SubjectEnum> availableSubjects;
-
-    
-     public static enum SubjectEnum{
-        Math, 
-        Physics,
-        Philosophy,
-        English,
-        Literature,
-        Geography
+    public static ISubject createSubject(Subject subject){
+        return subject.getSubject();
     }
-    
-    static{
-        availableSubjects = new HashMap<>();
-        
-        availableSubjects.put("Math", SubjectEnum.Math);
-        availableSubjects.put("Physics", SubjectEnum.Physics);
-        availableSubjects.put("Philosophy", SubjectEnum.Philosophy);
-        availableSubjects.put("English", SubjectEnum.English);
-        availableSubjects.put("Literature", SubjectEnum.Literature);
-        availableSubjects.put("Geography", SubjectEnum.Geography);
-    }
-    public static ISubject createSubject(String subjectString){
-        return createSubject(availableSubjects.get(subjectString));
-        
-    }
-    public static ISubject createSubject(SubjectEnum subject){
-        switch(subject){
-            case Math:
-                return new MathSubject();
-            case Physics:
-                return new PhysicsSubject();
-            case Philosophy:
-                return new PhilosophySubject();
-            case English:
-                return new EnglishSubject();
-            case Literature:
-                return new LiteratureSubject();
-            case Geography:
-                return new GeographySubject();
-        
-        }
-        throw new IllegalArgumentException();
+    public static ISubject createSubject(String subject){
+        return createSubject(Subject.valueOf(subject));
     }
 
-    public static String createSubjectString(SubjectEnum subject){
-        for(Map.Entry<String, SubjectEnum> entry: availableSubjects.entrySet()){
-            if(entry.getValue() == subject)
-                return entry.getKey();
-        }
-        return "Unknown";
-    }
     
     public static ArrayList<ISubject> convertToSubjectArray(ArrayList<String> arr){
         ArrayList<ISubject> new_arr = new ArrayList<>();
@@ -87,19 +43,11 @@ public class SubjectFactory {
         ArrayList<String> new_arr = new ArrayList<>();
         
         for(ISubject s : arr){
-            new_arr.add(createSubjectString(s.getSubjectEnum()));
+            new_arr.add((s.getSubjectEnum().name()));
         }
         return new_arr;
     } 
     
     
-    public static ArrayList<String> getSubjectsStrings(){
-        ArrayList<String> subjects = new ArrayList<>();
-        
-        for(String s : availableSubjects.keySet()){
-            subjects.add(s);
-        }
-        return subjects;
-    }
     
 }

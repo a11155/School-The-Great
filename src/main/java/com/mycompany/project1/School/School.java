@@ -23,9 +23,9 @@ public class School implements Serializable {
     
 
 
-    public School(String name, ArrayList<String> subjects) {
+    public School(String name, ArrayList<ISubject> subjects) {
         this.name = name;
-        this.subjects = SubjectFactory.convertToSubjectArray(subjects);
+        this.subjects = subjects;
         this.students = new ArrayList<Student>();
     }
     

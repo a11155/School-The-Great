@@ -4,7 +4,7 @@
  */
 package com.mycompany.project1.GUI.Menu;
 
-import com.mycompany.project1.States.States;
+import com.mycompany.project1.States.State;
 import com.mycompany.project1.States.IState;
 
 /**
@@ -14,9 +14,9 @@ import com.mycompany.project1.States.IState;
 
 public class MenuItem {
     private String name;
-    private States.state state;
+    private State.state state;
     
-    public MenuItem(String name, States.state state){
+    public MenuItem(String name, State.state state){
         this.name = name;
         this.state = state;
     }
@@ -31,13 +31,13 @@ public class MenuItem {
         return this.name;
     }
     
-    public States.state getState(){
+    public State.state getState(){
         return this.state;
     }
     
     
     
-    public void setState(States.state state){
+    public void setState(State.state state){
         this.state = state;
     }
     

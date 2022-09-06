@@ -5,6 +5,7 @@
 package com.mycompany.project1.School.Subjects;
 
 import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.School.Subject;
 
 /**
  *
@@ -17,9 +18,9 @@ public class PhilosophySubject implements ISubject{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public SubjectFactory.SubjectEnum getSubjectEnum() {
-        return SubjectFactory.SubjectEnum.Philosophy;
+   @Override
+    public Subject getSubjectEnum() {
+        return Subject.Philosophy;
     }
     
       @Override

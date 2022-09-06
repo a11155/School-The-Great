@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 abstract public class GUIState implements IState {
     private boolean done;
     protected JFrame frame;
-    protected States.state nextState;
+    protected State.state nextState;
     
     protected JPanel topPanel;
     protected JPanel bottomPanel;
@@ -30,7 +30,7 @@ abstract public class GUIState implements IState {
     
     public GUIState(){
         this.done = false;
-        this.nextState = States.state.Null;
+        this.nextState = State.state.nullState;
         this.frame = new JFrame();
     
         topPanel = new JPanel();
@@ -56,7 +56,7 @@ abstract public class GUIState implements IState {
         }
     }
     @Override
-    public States.state handle() {
+    public State.state handle() {
         
         initFrame();
         render();
@@ -88,6 +88,8 @@ abstract public class GUIState implements IState {
     
           //center panel
           centerPanel.setLayout(new BorderLayout());
+          centerPanel.add(Box.createRigidArea(new Dimension(0,5)));
+          centerPanel.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
           
          //Bottom panel
           bottomPanel.setBackground(Color.green);
