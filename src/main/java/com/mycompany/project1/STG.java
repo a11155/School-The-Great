@@ -4,8 +4,9 @@
  */
 package com.mycompany.project1;
 
+import com.mycompany.project1.Managers.StateManager;
 import com.mycompany.project1.StatesFolder.MenuState;
-import com.mycompany.project1.SchoolManager;
+import com.mycompany.project1.Managers.SchoolManager;
 import java.util.ArrayList;
 
 /**

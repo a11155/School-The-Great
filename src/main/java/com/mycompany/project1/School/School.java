@@ -4,7 +4,9 @@
  */
 package com.mycompany.project1.School;
 
-import com.mycompany.project1.SchoolManager;
+import com.mycompany.project1.School.Subjects.ISubject;
+import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.Managers.SchoolManager;
 import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;

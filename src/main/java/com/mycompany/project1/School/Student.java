@@ -4,6 +4,7 @@
  */
 package com.mycompany.project1.School;
 
+import com.mycompany.project1.School.Subjects.ISubject;
 import java.io.Serializable;
 import java.util.ArrayList;
 
