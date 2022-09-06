@@ -4,6 +4,7 @@
  */
 package com.mycompany.project1.Managers;
 
+import com.mycompany.project1.STG;
 import com.mycompany.project1.School.School;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,6 +22,10 @@ import java.util.logging.Logger;
  */
 public class SchoolManager implements Serializable {
 
+    static public String SAVE_FILENAME = "schools.ser";
+    static public String SAVE_DIR = STG.WORKING_DIR + "\\tmp";
+    
+    
     static SchoolManager instance;
 
     public static School getSchoolByName(String name) {
@@ -66,7 +71,7 @@ public class SchoolManager implements Serializable {
     
     public void serialize(){
         try{
-            FileOutputStream fileOut = new FileOutputStream("C:/tmp/schools.ser");
+            FileOutputStream fileOut = new FileOutputStream(SAVE_DIR + "\\" + SAVE_FILENAME);
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(this);
             out.close();
@@ -81,7 +86,7 @@ public class SchoolManager implements Serializable {
         
         instance = new SchoolManager();
       try {
-         FileInputStream fileIn = new FileInputStream("/tmp/schools.ser");
+         FileInputStream fileIn = new FileInputStream(SAVE_DIR + "\\" + SAVE_FILENAME);
          ObjectInputStream in = new ObjectInputStream(fileIn);
          instance = (SchoolManager) in.readObject();
          in.close();

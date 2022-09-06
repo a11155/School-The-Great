@@ -17,6 +17,11 @@ public class STG {
     
     private StateManager stateManager;
     
+    public static String WORKING_DIR = System.getProperty("user.dir")
+            + "\\src\\main\\java\\com\\mycompany\\project1";
+    
+    
+    
     private void initialize(){
         stateManager = StateManager.getInstance();
         
@@ -25,6 +30,8 @@ public class STG {
     
     
     public STG(){
+        
+        System.out.println(WORKING_DIR);
         initialize();
     }
     
