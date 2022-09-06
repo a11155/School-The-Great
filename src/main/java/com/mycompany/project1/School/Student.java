@@ -13,6 +13,9 @@ import java.util.ArrayList;
  * @author Andrii
  */
 public class Student implements Serializable {
+    
+    public static final int MAX_SUBJECTS = 3;
+    
     private School school;
     
     private ArrayList<ISubject> subjects;

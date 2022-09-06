@@ -4,7 +4,7 @@
  */
 package com.mycompany.project1.States.Settings.Schools;
 
-import com.mycompany.project1.Factories.GUIFactory;
+import com.mycompany.project1.GUI.GUIFactory;
 import com.mycompany.project1.GUI.Menu.Menu;
 import com.mycompany.project1.Factories.MenuFactory;
 import com.mycompany.project1.School.School;

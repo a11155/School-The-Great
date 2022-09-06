@@ -5,11 +5,12 @@
 package com.mycompany.project1.States.Settings.Students;
 
 import com.mycompany.project1.Factories.StudentFactory;
-import com.mycompany.project1.Factories.GUIFactory;
+import com.mycompany.project1.GUI.GUIFactory;
 import com.mycompany.project1.School.Subjects.ISubject;
 import com.mycompany.project1.School.School;
 import com.mycompany.project1.Factories.SubjectFactory;
 import com.mycompany.project1.Managers.SchoolManager;
+import com.mycompany.project1.School.Student;
 import com.mycompany.project1.States.GUIState;
 import com.mycompany.project1.States.State;
 import java.awt.BorderLayout;
@@ -128,7 +129,7 @@ public class AddStudentState extends GUIState {
            
            
            
-           selectedSubjectList = GUIFactory.createDraggableList(new ArrayList());
+           selectedSubjectList = GUIFactory.createDraggableList(new ArrayList(), Student.MAX_SUBJECTS);
            JPanel selectedSubjectPanel = GUIFactory.createListPanel("Selected subjects: ", selectedSubjectList);
           
          

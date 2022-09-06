@@ -35,6 +35,10 @@ public class DNDList extends JList implements DropTargetListener, DragSourceList
   /**
    * enables this component to be a dropTarget
    */
+    
+    
+    private final int NO_LIMIT = -1;
+    private int size;
 
   DropTarget dropTarget = null;
 
@@ -53,6 +57,18 @@ public class DNDList extends JList implements DropTargetListener, DragSourceList
     dropTarget = new DropTarget( this, this );
     dragSource = new DragSource();
     dragSource.createDefaultDragGestureRecognizer( this, DnDConstants.ACTION_MOVE, this );
+    this.size = NO_LIMIT;
+  }
+  
+  
+  
+  public DNDList( ListModel dataModel, int size )
+  {
+    super( dataModel );
+    dropTarget = new DropTarget( this, this );
+    dragSource = new DragSource();
+    dragSource.createDefaultDragGestureRecognizer( this, DnDConstants.ACTION_MOVE, this );
+    this.size = size;
   }
 
   /**
@@ -104,6 +120,12 @@ public class DNDList extends JList implements DropTargetListener, DragSourceList
 
         event.acceptDrop( DnDConstants.ACTION_MOVE );
         String s = ( String )transferable.getTransferData( DataFlavor.stringFlavor );
+        
+        if(!hasSpace()){
+            event.getDropTargetContext().dropComplete(false);
+            return;
+        }
+      
         addElement( s );
         event.getDropTargetContext().dropComplete( true );
       }
@@ -212,7 +234,11 @@ public class DNDList extends JList implements DropTargetListener, DragSourceList
 
   public void addElement( Object s )
   {
-    ( ( DefaultListModel )getModel() ).addElement( s.toString() );
+      DefaultListModel model = (DefaultListModel) getModel();
+ 
+      
+     
+     model.addElement( s.toString() );
   }
 
   /**
@@ -223,5 +249,13 @@ public class DNDList extends JList implements DropTargetListener, DragSourceList
   {
     ( ( DefaultListModel )getModel() ).removeElement( getSelectedValue() );
   }
+
+    private boolean hasSpace() {
+           DefaultListModel model = (DefaultListModel) getModel();
+            if(size != NO_LIMIT && model.size() >= size)
+                return false;
+            return true;
+      
+    }
 
 }
