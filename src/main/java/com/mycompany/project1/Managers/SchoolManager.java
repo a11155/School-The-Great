@@ -49,6 +49,10 @@ public class SchoolManager implements Serializable {
         this.schools.add(school);
         serialize();
     }
+    public void clear(){
+        schools.clear(); // The garbage collector should take care
+        serialize(); // Of all the students, and subjects, that no longer have a point of reference
+    }
 
     public void removeSchool(School school) {
         this.schools.remove(school);

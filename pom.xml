@@ -11,4 +11,11 @@
         <maven.compiler.target>18</maven.compiler.target>
         <exec.mainClass>com.mycompany.project1.Project1</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+        <groupId>com.github.javafaker</groupId>
+        <artifactId>javafaker</artifactId>
+        <version>0.15</version>
+        </dependency>
+    </dependencies>
 </project>

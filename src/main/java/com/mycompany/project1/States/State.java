@@ -25,7 +25,8 @@ public class State {
         addStudent,
         removeStudent,
         nullState,
-        checkStudent
+        checkStudent,
+        init
     }
     
     private State() {};

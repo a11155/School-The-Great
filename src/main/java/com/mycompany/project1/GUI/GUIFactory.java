@@ -7,6 +7,7 @@ package com.mycompany.project1.GUI;
 import com.mycompany.project1.GUI.DNDList;
 import java.awt.Component;
 import static java.awt.Component.LEFT_ALIGNMENT;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
@@ -78,6 +79,12 @@ public class GUIFactory {
          return listPane;
     }
     
+    public static void addArray(Container receiver, Component[] components){
+        for(Component c : components){
+            receiver.add(c);
+        }
+    }
+    
     public static JPanel createGrid(Component[] components, int y){
         JPanel grid = new JPanel();
         grid.setLayout(new GridLayout(y, components.length));
@@ -97,6 +104,13 @@ public class GUIFactory {
         }
         return grid;
     }
+    
+    public static JLabel createLabel(String _label){
+       JLabel label = new JLabel(_label);  
+       label.setPreferredSize(new Dimension(100, 25));
+       return label;
+    }
+    
     
     public static JPanel createButtonPanel(JButton[] buttons){
         JPanel buttonPane = new JPanel();

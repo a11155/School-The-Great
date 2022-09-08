@@ -58,7 +58,7 @@ abstract public class GUIState implements IState {
     @Override
     public State.state handle() {
         
-        initFrame();
+        initMainFrame();
         render();
         addFrame();
           
@@ -74,7 +74,7 @@ abstract public class GUIState implements IState {
     
     
     
-    protected void initFrame(){
+    protected void initMainFrame(){
         //frame init
           frame.setSize(350, 400);
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

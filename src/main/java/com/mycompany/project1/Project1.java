@@ -5,6 +5,7 @@
 
 package com.mycompany.project1;
 
+import com.github.javafaker.Faker;
 import com.mycompany.project1.States.State.NullState;
 import com.mycompany.project1.States.Settings.Schools.AddSchoolState;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class Project1 {
         
         //state.handle();
         STG stg = new STG(); 
+        
         
         stg.run();
         

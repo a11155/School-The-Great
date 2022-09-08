@@ -25,6 +25,7 @@ public class MenuFactory {
             new ArrayList<MenuItem>(){ 
                 {
                     add(new MenuItem("Compete", State.state.nullState));
+                    add(new MenuItem("Init", State.state.init));
                     add(new MenuItem("Settings",  State.state.settings));
                     add(new MenuItem("Exit",  State.state.nullState));
                     

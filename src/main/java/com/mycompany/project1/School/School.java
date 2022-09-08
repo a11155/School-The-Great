@@ -29,6 +29,12 @@ public class School implements Serializable {
         this.students = new ArrayList<Student>();
     }
     
+    public School(String name, ArrayList<ISubject> subjects, ArrayList<Student> students) {
+        this.name = name;
+        this.subjects = subjects;
+        this.students = students;
+    }
+    
     public String getName(){
         return this.name;
     }

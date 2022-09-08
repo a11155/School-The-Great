@@ -28,6 +28,14 @@ public class SubjectFactory {
     public static ISubject createSubject(String subject){
         return createSubject(Subject.valueOf(subject));
     }
+    
+    public static ArrayList<ISubject> getAllSubjects(){
+        ArrayList<ISubject> subjects = new ArrayList<>();
+        for(Subject s : Subject.values()){
+            subjects.add(createSubject(s));
+        }
+        return subjects;
+    }
 
     
     public static ArrayList<ISubject> convertToSubjectArray(ArrayList<String> arr){
