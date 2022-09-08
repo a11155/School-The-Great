@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.mycompany.project1.School;
+package com.mycompany.project1.Schools;
 
-import com.mycompany.project1.School.Subjects.ISubject;
+import com.mycompany.project1.Schools.Subjects.ISubject;
 import com.mycompany.project1.Factories.SubjectFactory;
 import com.mycompany.project1.Managers.SchoolManager;
 import java.io.Serializable;

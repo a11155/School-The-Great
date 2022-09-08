@@ -6,9 +6,9 @@ package com.mycompany.project1.Factories;
 
 import com.github.javafaker.Faker;
 import com.mycompany.project1.STG;
-import com.mycompany.project1.School.Subjects.ISubject;
-import com.mycompany.project1.School.School;
-import com.mycompany.project1.School.Student;
+import com.mycompany.project1.Schools.Subjects.ISubject;
+import com.mycompany.project1.Schools.School;
+import com.mycompany.project1.Schools.Student;
 import java.util.ArrayList;
 import java.util.Collections;
 

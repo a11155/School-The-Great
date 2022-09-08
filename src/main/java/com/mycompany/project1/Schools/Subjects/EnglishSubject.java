@@ -2,30 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.project1.School.Subjects;
+package com.mycompany.project1.Schools.Subjects;
 
 import com.mycompany.project1.Factories.SubjectFactory;
-import com.mycompany.project1.School.Subject;
+import com.mycompany.project1.Schools.Subject;
 
 /**
  *
  * @author Andrii
  */
-public class PhilosophySubject implements ISubject{
+public class EnglishSubject implements ISubject{
 
     @Override
     public int getGrade() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-   @Override
+    @Override
     public Subject getSubjectEnum() {
-        return Subject.Philosophy;
+        return Subject.English;
     }
     
-      @Override
+    @Override
     public String toString(){
-        return "Philosophy";
+        return "English";
     }
     
 }

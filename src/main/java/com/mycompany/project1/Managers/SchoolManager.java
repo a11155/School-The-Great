@@ -5,7 +5,7 @@
 package com.mycompany.project1.Managers;
 
 import com.mycompany.project1.STG;
-import com.mycompany.project1.School.School;
+import com.mycompany.project1.Schools.School;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

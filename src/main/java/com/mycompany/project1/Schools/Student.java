@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.project1.School;
+package com.mycompany.project1.Schools;
 
 import com.mycompany.project1.STG;
-import com.mycompany.project1.School.Subjects.ISubject;
+import com.mycompany.project1.Schools.Subjects.ISubject;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;

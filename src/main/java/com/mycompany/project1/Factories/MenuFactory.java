@@ -9,7 +9,7 @@ import com.mycompany.project1.GUI.Menu.MenuItem;
 import com.mycompany.project1.States.State;
 import com.mycompany.project1.GUI.Menu.Renderers.DialogRenderer;
 import com.mycompany.project1.GUI.Menu.Renderers.OptionRenderer;
-import com.mycompany.project1.School.School;
+import com.mycompany.project1.Schools.School;
 import com.mycompany.project1.StatesFolder.MenuState;
 import com.mycompany.project1.States.NullState;
 import java.util.ArrayList;
@@ -24,8 +24,7 @@ public class MenuFactory {
         return new Menu<MenuItem>("Main Menu",
             new ArrayList<MenuItem>(){ 
                 {
-                    add(new MenuItem("Compete", State.state.nullState));
-                    add(new MenuItem("Init", State.state.init));
+                    add(new MenuItem("Play", State.state.nullState));
                     add(new MenuItem("Settings",  State.state.settings));
                     add(new MenuItem("Exit",  State.state.nullState));
                     
@@ -42,7 +41,7 @@ public class MenuFactory {
                 {
                     add(new MenuItem("Edit Students",  State.state.editStudentMenu));
                     add(new MenuItem("Edit Schools",  State.state.editSchoolMenu));
-                    add(new MenuItem("Edit Competitions",  State.state.editCompetitionMenu));
+                    add(new MenuItem("Init", State.state.init));
                     add(new MenuItem("Back",  State.state.mainMenu));
                     
                 }
