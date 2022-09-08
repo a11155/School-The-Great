@@ -13,6 +13,7 @@ import com.mycompany.project1.States.Settings.Students.EditStudentMenuState;
 import com.mycompany.project1.States.MainMenuState;
 import com.mycompany.project1.States.Settings.Schools.EditSchoolMenuState;
 import com.mycompany.project1.States.IState;
+import com.mycompany.project1.States.Play.PlayState;
 import com.mycompany.project1.States.Settings.InitState;
 import com.mycompany.project1.States.State;
 
@@ -69,6 +70,8 @@ public class StateManager {
                 return new CheckStudentState();
             case init:
                 return new InitState();
+            case play:
+                return new PlayState();
                 
                 
             default:

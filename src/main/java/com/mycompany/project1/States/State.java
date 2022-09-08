@@ -10,6 +10,7 @@ package com.mycompany.project1.States;
  */
 public class State {
     public static enum state{
+        play,
         mainMenu, 
         settings,
         editSchoolMenu,

@@ -6,7 +6,6 @@ package com.mycompany.project1;
 
 import com.github.javafaker.Faker;
 import com.mycompany.project1.Managers.StateManager;
-import com.mycompany.project1.StatesFolder.MenuState;
 import com.mycompany.project1.Managers.SchoolManager;
 import java.util.ArrayList;
 import java.util.Random;

@@ -4,6 +4,8 @@
  */
 package com.mycompany.project1.Schools;
 
+
+import com.mycompany.project1.Schools.Subjects.*;
 import java.util.ArrayList;
 
 /**

@@ -4,12 +4,14 @@
  */
 package com.mycompany.project1.GUI;
 
+import com.mycompany.project1.Competitions.Competition;
 import com.mycompany.project1.GUI.DNDList;
 import java.awt.Component;
 import static java.awt.Component.LEFT_ALIGNMENT;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.BorderFactory;
@@ -20,6 +22,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.JScrollPane;
 
 /**
@@ -110,26 +113,30 @@ public class GUIFactory {
        label.setPreferredSize(new Dimension(100, 25));
        return label;
     }
-    
-    
-    public static JPanel createButtonPanel(JButton[] buttons){
-        JPanel buttonPane = new JPanel();
-            buttonPane.setLayout(new BoxLayout(buttonPane, BoxLayout.LINE_AXIS));
-            buttonPane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
-            buttonPane.add(Box.createHorizontalGlue());
+    public static JPanel createPanel(Component[] components){
+            JPanel pane = new JPanel();
+            pane.setLayout(new BoxLayout(pane, BoxLayout.LINE_AXIS));
+            pane.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
+            pane.add(Box.createHorizontalGlue());
             
             boolean first = true; 
-            for(JButton button : buttons){
+            for(Component component : components){
                 if(!first)
-                    buttonPane.add(Box.createRigidArea(new Dimension(10, 0)));
+                    pane.add(Box.createRigidArea(new Dimension(10, 0)));
                 else 
                     first = false;
-                buttonPane.add(button);
+                pane.add(component);
             }
             
      
             
-            return buttonPane;
+            return pane;
+    }
+
+    
+    
+    public static JPanel createButtonPanel(JButton[] buttons){
+        return createPanel(buttons);
     }
     
     public static JButton createButton(String label, ActionListener action){
@@ -138,5 +145,31 @@ public class GUIFactory {
           button.addActionListener(action);
           
           return button;
+    }
+    
+    public static JProgressBar createProgressBar(int min, int max, int value){
+        JProgressBar progressBar = new JProgressBar(min, max);
+        progressBar.setSize(300, 25);
+        progressBar.setValue(value);
+        
+        return progressBar;
+        
+    }
+    
+    public static JPanel createCompetitionVignette(Competition competition){
+        JPanel panel = new JPanel();
+        
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        
+        JLabel name = createLabel("Name: " + competition.getName());
+        JProgressBar prestige = createProgressBar(0, 5, competition.getPrestige());
+        JLabel prize = createLabel("Prize: " + competition.getPrize().toString());
+        
+        panel.add(name);
+        panel.add(prestige);
+        panel.add(prize);
+        panel.setBorder(BorderFactory.createBevelBorder(0));
+        
+        return panel;
     }
 }
