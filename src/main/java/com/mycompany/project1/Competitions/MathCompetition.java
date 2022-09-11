@@ -5,8 +5,10 @@
 package com.mycompany.project1.Competitions;
 
 import com.mycompany.project1.Competitions.Prizes.IPrize;
-import com.mycompany.project1.Schools.School;
-import com.mycompany.project1.Schools.Student;
+import com.mycompany.project1.STG;
+import com.mycompany.project1.Models.School;
+import com.mycompany.project1.Models.Student;
+import com.mycompany.project1.Models.Student.Skill;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,13 +18,39 @@ import java.util.HashMap;
  */
 public class MathCompetition extends Competition {
 
+    
+    private static String[] names = new String[]{
+        "Math Olympiad", "Math something", "Mathacre",
+        "Math Tournament", "Physics Olympiad", "Physics Tournament",
+        "Chemistry Tournament", "Science Olympiad"
+    };
+    
+    
+    
     public MathCompetition(String name, int prestige, IPrize prize){
         super(name, prestige, prize);
     }
     
-    @Override
-    public boolean compete(HashMap<School, ArrayList<Student>> schools) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    
+    public MathCompetition(IPrize prize){
+        super(prize);
+        this.name = names[STG.random.nextInt(names.length)];
     }
+
+    @Override
+    public double getBaseScore(Student student) {
+        HashMap<Skill, Double> skills = student.getSkills();
+        
+        double score = 0;
+        
+        score += skills.get(Student.Skill.Math);
+        score += 0.5*skills.get(Student.Skill.Rhetoric);
+        score += competitors.get(student.getSchool()).length * skills.get(Student.Skill.Teamwork);
+    
+        return score;
+    }
+    
+    
+    
     
 }

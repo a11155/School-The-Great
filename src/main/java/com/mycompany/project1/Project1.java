@@ -13,10 +13,7 @@ package com.mycompany.project1;
 public class Project1 {
     public static final String TITLE = "School The Great";
     public static void main(String[] args) {
-        
-        //AddSchoolState state = new AddSchoolState();
-        
-        //state.handle();
+      
         STG stg = new STG(); 
         
         

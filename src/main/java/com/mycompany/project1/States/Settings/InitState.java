@@ -20,7 +20,7 @@ public class InitState implements IState {
         
         SchoolManager.getInstance().clear();
         
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 3; i++){
             SchoolFactory.createRandomSchool();
         }
         return State.state.settings;

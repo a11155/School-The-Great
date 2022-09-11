@@ -6,11 +6,11 @@ package com.mycompany.project1.States.Settings.Schools;
 
 import com.mycompany.project1.GUI.DNDList;
 import com.mycompany.project1.GUI.GUIFactory;
-import com.mycompany.project1.Schools.School;
+import com.mycompany.project1.Models.School;
 import com.mycompany.project1.Factories.SubjectFactory;
 import com.mycompany.project1.Managers.SchoolManager;
-import com.mycompany.project1.Schools.Subject;
-import com.mycompany.project1.Schools.Subjects.ISubject;
+import com.mycompany.project1.Models.Subject;
+import com.mycompany.project1.Models.Subjects.ISubject;
 import com.mycompany.project1.States.GUIState;
 import com.mycompany.project1.States.State;
 import java.awt.BorderLayout;

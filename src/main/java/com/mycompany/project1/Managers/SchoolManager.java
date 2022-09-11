@@ -5,7 +5,7 @@
 package com.mycompany.project1.Managers;
 
 import com.mycompany.project1.STG;
-import com.mycompany.project1.Schools.School;
+import com.mycompany.project1.Models.School;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -62,6 +62,15 @@ public class SchoolManager implements Serializable {
     public ArrayList<School> getSchools() {
         System.out.println(schools);
         return this.schools;
+    }
+    
+    
+    public School[] getSchoolsArray() {
+        School[] arr = new School[schools.size()];
+        for(int i = 0; i < schools.size(); i++){
+            arr[i] = schools.get(i);
+        }
+        return arr;
     }
 
     public static SchoolManager getInstance() {

@@ -11,9 +11,9 @@ package com.mycompany.project1.States;
 public class State {
     public static enum state{
         play,
-        mainMenu, 
-        settings,
-        editSchoolMenu,
+        mainMenu,  
+        settings, 
+        editSchoolMenu, 
         addSchool,
         editSchool,
         removeSchool,
@@ -27,6 +27,8 @@ public class State {
         removeStudent,
         nullState,
         checkStudent,
+        compete,
+        train,
         init
     }
     

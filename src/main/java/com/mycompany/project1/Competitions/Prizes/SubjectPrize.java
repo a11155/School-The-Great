@@ -4,7 +4,11 @@
  */
 package com.mycompany.project1.Competitions.Prizes;
 
-import com.mycompany.project1.Schools.School;
+import com.mycompany.project1.Factories.SubjectFactory;
+import com.mycompany.project1.Models.School;
+import com.mycompany.project1.Models.Subject;
+import com.mycompany.project1.Models.Subjects.ISubject;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,7 +18,7 @@ public class SubjectPrize implements IPrize {
 
     @Override
     public void reward(School school) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        school.addSubject(SubjectFactory.createSubject(Subject.Philosophy));
     }
     
     @Override

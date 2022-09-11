@@ -7,11 +7,11 @@ package com.mycompany.project1.States.Settings.Students;
 import com.mycompany.project1.GUI.GUIFactory;
 import com.mycompany.project1.GUI.Menu.Menu;
 import com.mycompany.project1.Factories.MenuFactory;
-import com.mycompany.project1.Schools.School;
-import com.mycompany.project1.Schools.Student;
+import com.mycompany.project1.Models.School;
+import com.mycompany.project1.Models.Student;
 import com.mycompany.project1.Factories.SubjectFactory;
 import com.mycompany.project1.Managers.SchoolManager;
-import com.mycompany.project1.Schools.Subjects.ISubject;
+import com.mycompany.project1.Models.Subjects.ISubject;
 import com.mycompany.project1.States.GUIState;
 import com.mycompany.project1.States.State;
 import java.awt.BorderLayout;
@@ -54,7 +54,7 @@ public class CheckStudentState extends GUIState{
     private ActionListener detailsAction = new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent evt) {
-                    createDetailsFrame((Student) studentList.getSelectedValue());
+                    GUIFactory.createDetailsFrame((Student) studentList.getSelectedValue());
                 }
 
            
@@ -99,49 +99,7 @@ public class CheckStudentState extends GUIState{
      
      
       
-    private void createDetailsFrame(Student student) {
-        HashMap<Student.Skill, Double> skills = student.getSkills();
-
-        
-        JFrame detailsFrame = new JFrame();          
-        
-          detailsFrame.setSize(250, 300);
-          detailsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-          detailsFrame.setLayout(new BorderLayout());
-          
-          JPanel detailsPanel = new JPanel();
-          detailsPanel.setLayout(new GridLayout(1 + skills.size(), 2));
-          
-          
-          
-          JLabel nameLabel = GUIFactory.createLabel("Name:");
-          JLabel name = GUIFactory.createLabel(student.getName());
-          
-          
-          
-          detailsPanel.setBorder(BorderFactory.createEmptyBorder(30,30,30,30));
-          
-          
-          GUIFactory.addArray(detailsPanel, new Component[]{
-              nameLabel, name
-          });
-
-          
-          Component[] skillset = new Component[skills.size() * 2];
-          
-          int i = 0;
-          for(Student.Skill skill : skills.keySet()){
-              skillset[i++] = GUIFactory.createLabel(skill.name() + ":");
-              skillset[i++] = GUIFactory.createLabel(skills.get(skill).toString());
-          }
-          GUIFactory.addArray(detailsPanel, skillset);
-          
-          
-          
-          detailsFrame.add(detailsPanel, BorderLayout.CENTER);
-          detailsFrame.setVisible(true);
-        
-    }
+    
      
     @Override
     protected void render() {

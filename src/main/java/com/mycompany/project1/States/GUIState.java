@@ -20,7 +20,7 @@ import javax.swing.JPanel;
  * @author Andrii
  */
 abstract public class GUIState implements IState {
-    private boolean done;
+    protected boolean done;
     protected JFrame frame;
     protected State.state nextState;
     
@@ -96,15 +96,16 @@ abstract public class GUIState implements IState {
           bottomPanel.setPreferredSize(new Dimension(100, 80));
           bottomPanel.setLayout(new FlowLayout());
           
+           frame.add(topPanel, BorderLayout.NORTH);
+           frame.add(centerPanel, BorderLayout.CENTER); 
+            frame.add(bottomPanel, BorderLayout.SOUTH);
           
+          frame.setVisible(true);
     
     }
     
     protected void addFrame(){
-        frame.add(topPanel, BorderLayout.NORTH);
-        frame.add(centerPanel, BorderLayout.CENTER); 
-        frame.add(bottomPanel, BorderLayout.SOUTH);
-          
+       
         frame.setVisible(true);
     }
     protected abstract void render(); 

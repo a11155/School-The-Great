@@ -6,10 +6,10 @@ package com.mycompany.project1.Factories;
 
 import com.mycompany.project1.Managers.SchoolManager;
 import com.mycompany.project1.STG;
-import com.mycompany.project1.Schools.School;
-import com.mycompany.project1.Schools.Student;
-import com.mycompany.project1.Schools.Subject;
-import com.mycompany.project1.Schools.Subjects.ISubject;
+import com.mycompany.project1.Models.School;
+import com.mycompany.project1.Models.Student;
+import com.mycompany.project1.Models.Subject;
+import com.mycompany.project1.Models.Subjects.ISubject;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -19,9 +19,9 @@ import java.util.Collections;
  */
 public class SchoolFactory {
     private final static int MAX_SUBJECTS = 4;
-    private final static int MAX_STUDENTS = 3;
+    private final static int MAX_STUDENTS = 5;
     public static School createRandomSchool(){
-        String name = STG.faker.gameOfThrones().city();
+        String name = STG.faker.university().name();
         
         ArrayList<ISubject> subjects = SubjectFactory.getAllSubjects();
         

@@ -13,7 +13,9 @@ import com.mycompany.project1.States.Settings.Students.EditStudentMenuState;
 import com.mycompany.project1.States.MainMenuState;
 import com.mycompany.project1.States.Settings.Schools.EditSchoolMenuState;
 import com.mycompany.project1.States.IState;
+import com.mycompany.project1.States.Play.CompeteState;
 import com.mycompany.project1.States.Play.PlayState;
+import com.mycompany.project1.States.Play.TrainState;
 import com.mycompany.project1.States.Settings.InitState;
 import com.mycompany.project1.States.State;
 
@@ -72,6 +74,10 @@ public class StateManager {
                 return new InitState();
             case play:
                 return new PlayState();
+            case compete:
+                return new CompeteState();
+            case train:
+                return new TrainState();
                 
                 
             default:

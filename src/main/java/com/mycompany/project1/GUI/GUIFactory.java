@@ -6,6 +6,8 @@ package com.mycompany.project1.GUI;
 
 import com.mycompany.project1.Competitions.Competition;
 import com.mycompany.project1.GUI.DNDList;
+import com.mycompany.project1.Models.Student;
+import java.awt.BorderLayout;
 import java.awt.Component;
 import static java.awt.Component.LEFT_ALIGNMENT;
 import java.awt.Container;
@@ -14,11 +16,13 @@ import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
@@ -113,6 +117,12 @@ public class GUIFactory {
        label.setPreferredSize(new Dimension(100, 25));
        return label;
     }
+    
+    public static JLabel createLabel(double num){
+        
+        double rounded_num = Math.round(num * 10.0) / 10.0;
+        return createLabel(Double.toString(rounded_num));
+    }
     public static JPanel createPanel(Component[] components){
             JPanel pane = new JPanel();
             pane.setLayout(new BoxLayout(pane, BoxLayout.LINE_AXIS));
@@ -171,5 +181,50 @@ public class GUIFactory {
         panel.setBorder(BorderFactory.createBevelBorder(0));
         
         return panel;
+    }
+    
+    
+    
+    public static void createDetailsFrame(Student student) {
+        HashMap<Student.Skill, Double> skills = student.getSkills();
+
+        
+        JFrame detailsFrame = new JFrame();          
+        
+          detailsFrame.setSize(250, 300);
+          detailsFrame.setLayout(new BorderLayout());
+          
+          JPanel detailsPanel = new JPanel();
+          detailsPanel.setLayout(new GridLayout(1 + skills.size(), 2));
+          
+          
+          
+          JLabel nameLabel = GUIFactory.createLabel("Name:");
+          JLabel name = GUIFactory.createLabel(student.getName());
+          
+          
+          
+          detailsPanel.setBorder(BorderFactory.createEmptyBorder(30,30,30,30));
+          
+          
+          GUIFactory.addArray(detailsPanel, new Component[]{
+              nameLabel, name
+          });
+
+          
+          Component[] skillset = new Component[skills.size() * 2];
+          
+          int i = 0;
+          for(Student.Skill skill : skills.keySet()){
+              skillset[i++] = GUIFactory.createLabel(skill.name() + ":");
+              skillset[i++] = GUIFactory.createLabel(skills.get(skill).toString());
+          }
+          GUIFactory.addArray(detailsPanel, skillset);
+          
+          
+          
+          detailsFrame.add(detailsPanel, BorderLayout.CENTER);
+          detailsFrame.setVisible(true);
+        
     }
 }

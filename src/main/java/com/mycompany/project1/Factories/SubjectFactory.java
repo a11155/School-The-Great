@@ -4,14 +4,14 @@
  */
 package com.mycompany.project1.Factories;
 
-import com.mycompany.project1.Schools.Subject;
-import com.mycompany.project1.Schools.Subjects.MathSubject;
-import com.mycompany.project1.Schools.Subjects.PhysicsSubject;
-import com.mycompany.project1.Schools.Subjects.EnglishSubject;
-import com.mycompany.project1.Schools.Subjects.PhilosophySubject;
-import com.mycompany.project1.Schools.Subjects.GeographySubject;
-import com.mycompany.project1.Schools.Subjects.LiteratureSubject;
-import com.mycompany.project1.Schools.Subjects.ISubject;
+import com.mycompany.project1.Models.Subject;
+import com.mycompany.project1.Models.Subjects.MathSubject;
+import com.mycompany.project1.Models.Subjects.PhysicsSubject;
+import com.mycompany.project1.Models.Subjects.EnglishSubject;
+import com.mycompany.project1.Models.Subjects.PhilosophySubject;
+import com.mycompany.project1.Models.Subjects.GeographySubject;
+import com.mycompany.project1.Models.Subjects.LiteratureSubject;
+import com.mycompany.project1.Models.Subjects.ISubject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;

@@ -4,10 +4,15 @@
  */
 package com.mycompany.project1.States.Play;
 
+import com.mycompany.project1.GUI.Play.RankPanel;
+import com.mycompany.project1.GUI.Play.DashBoardPanel;
 import com.mycompany.project1.Competitions.Competition;
 import com.mycompany.project1.Competitions.MathCompetition;
 import com.mycompany.project1.Competitions.Prizes.SubjectPrize;
+import com.mycompany.project1.Factories.CompetitionFactory;
 import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Managers.SchoolManager;
+import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.GUIState;
 import com.mycompany.project1.States.IState;
 import com.mycompany.project1.States.State;
@@ -15,6 +20,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -28,106 +35,95 @@ import javax.swing.border.Border;
 public class PlayState extends GUIState implements IState {
 
     
-    private ActionListener backAction = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    nextState = State.state.editStudentMenu;
-                    endFrame();
-                }
-    };
-    
-    
-    private ActionListener competeAction = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    nextState = State.state.editStudentMenu;
-                    endFrame();
-                }
-    };
-    
-    
-    private ActionListener tradeAction = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    nextState = State.state.editStudentMenu;
-                    endFrame();
-                }
-    };
-    
-    private ActionListener nextAction = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    nextState = State.state.editStudentMenu;
-                    endFrame();
-                }
-    };
-    private ActionListener trainAction = new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent evt) {
-                    nextState = State.state.editStudentMenu;
-                    endFrame();
-                }
-    };
-    
-    
-    
+
     
     
     
     public PlayState() {
     }
 
+    private ActionListener backAction = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent evt) {
+            nextState = State.state.mainMenu;
+            endFrame();
+        }
+    };
+    
+    
+    @Override 
+    public State.state handle(){
+         initMainFrame();
+        render();
+          
+        waitForAction();
+        
+        suspend();
+        
+        return nextState;
+    }
     @Override
     protected void render() {
+        
+        Competition[] competitions = CompetitionFactory.generateCompetitions();
+        School[] schools = SchoolManager.getInstance().getSchoolsArray();
+               
         JTabbedPane tabbedPane = new JTabbedPane();
        
-         JPanel content = new JPanel();
-         JPanel rankPanel = new JPanel();
-         
-        tabbedPane.addTab("Dashboard", content);
-        tabbedPane.addTab("Rank", rankPanel);
+        JPanel rankPanel = new JPanel();
+        JPanel dashboardPanel = new JPanel();
+       
         
         
-        
-    
-        Competition x = new MathCompetition("Math1", 3, new SubjectPrize());
-        Competition y = new MathCompetition("Mathy", 2, new SubjectPrize());
-      
-    
-        
-        JButton trainButton = GUIFactory.createButton("Train", trainAction);
-        JButton tradeButton = GUIFactory.createButton("Trade", tradeAction);
-        
-        JPanel studentPane = new JPanel();
-        studentPane.setLayout(new BorderLayout());
-        studentPane.add(GUIFactory.createLabel("Manage Students:"), BorderLayout.NORTH);
-        studentPane.add(GUIFactory.createButtonPanel(new JButton[]{
-            trainButton, tradeButton}), BorderLayout.CENTER);
+        PlayActions actions = new PlayActions(schools, competitions);
         
         
+       
+        RankPanel rankPane = new RankPanel(SchoolManager.getInstance().getSchools());
+        rankPane.create(rankPanel);
         
-        
-            content.setLayout(new GridLayout(4, 2));
-        
-            content.add(GUIFactory.createLabel("Current Competitions:"));
-        content.add(GUIFactory.createLabel("School:" + "Westeros"));
-        
-        
-        
-        content.add(GUIFactory.createCompetitionVignette(x));
-        
-        
-        content.add(studentPane);
-        
-        content.add(GUIFactory.createCompetitionVignette(x));
-        
-        content.add(GUIFactory.createButton("Compete", competeAction));
-        content.add(GUIFactory.createCompetitionVignette(y));
-
-        content.add(GUIFactory.createButton("Next", nextAction));        
-         
-        
+        tabbedPane.addTab("Dashboard", dashboardPanel);
+        tabbedPane.addTab("Rank", rankPanel); 
+       
         centerPanel.add(tabbedPane, BorderLayout.CENTER);
+        
+    
+        addFrame();
+        
+        
+        int i = 0;
+        while(i < schools.length){
+            School currentSchool = schools[actions.getCurrentSchool()];
+            
+            dashboardPanel.removeAll();
+            dashboardPanel.revalidate();
+            dashboardPanel.repaint();
+            DashBoardPanel dashboard = new DashBoardPanel(currentSchool, competitions, actions);
+            dashboard.create(dashboardPanel);
+            
+            i++;
+            
+            System.out.println(i + " " + actions.getCurrentSchool());
+            int x = 0;
+            while(i > actions.getCurrentSchool() && !done){
+                try {
+               Thread.sleep(0);
+            } catch(InterruptedException e) {
+            }
+            }
+            
+        }
+        
+            dashboardPanel.removeAll();
+            
+            actions.setCurrentSchool(0);
+            nextState = State.state.compete;
+            endFrame();
+            
+            
+        
+        
+        
     
     }
 
