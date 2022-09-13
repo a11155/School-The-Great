@@ -8,6 +8,7 @@ import com.mycompany.project1.Models.Competitions.Competition;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.Play.Frames.CheckSchoolFrame;
 import com.mycompany.project1.States.Play.Frames.CompeteFrame;
+import com.mycompany.project1.States.Play.Frames.TradeFrame;
 import com.mycompany.project1.States.Play.Frames.TrainFrame;
 import com.mycompany.project1.States.State;
 import java.awt.event.ActionEvent;
@@ -84,7 +85,9 @@ public class PlayActions {
      public ActionListener tradeAction = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent evt) {
+             TradeFrame tradeFrame = new TradeFrame();
             
+            tradeFrame.render();
         }
     };
     

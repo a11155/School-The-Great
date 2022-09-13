@@ -40,6 +40,10 @@ public class School implements Serializable, Comparable<School> {
     public String getName(){
         return this.name;
     }
+    public void setStudents(ArrayList<Student> students){
+        this.students = students;
+        SchoolManager.getInstance().serialize();
+    }
     
     public ArrayList<ISubject> getSubjects(){
         return this.subjects;
