@@ -4,9 +4,10 @@
  */
 package com.mycompany.project1.Factories;
 
-import com.mycompany.project1.Competitions.Competition;
-import com.mycompany.project1.Competitions.MathCompetition;
-import com.mycompany.project1.Competitions.Prizes.SubjectPrize;
+import com.mycompany.project1.Models.Competitions.Competition;
+import com.mycompany.project1.Models.Competitions.MathCompetition;
+import com.mycompany.project1.Models.Competitions.PhilosophyCompetition;
+import com.mycompany.project1.Models.Competitions.Prizes.SubjectPrize;
 import com.mycompany.project1.STG;
 
 
@@ -18,7 +19,11 @@ public class CompetitionFactory {
     public static Competition[] currentCompetitions; 
     
     public static Competition createCompetition(){
-        return new MathCompetition(PrizeFactory.createPrize());
+        return switch(STG.random.nextInt(2)){
+            case 0 -> new MathCompetition(PrizeFactory.createPrize());
+            case 1 -> new PhilosophyCompetition(PrizeFactory.createPrize());
+            default -> throw new IllegalStateException("Invalid Competition");
+        };
     }
     
     public static Competition[] generateCompetitions(){

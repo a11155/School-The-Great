@@ -4,9 +4,9 @@
  */
 package com.mycompany.project1.States.Play.Frames;
 
-import com.mycompany.project1.Competitions.Competition;
+import com.mycompany.project1.Models.Competitions.Competition;
 import com.mycompany.project1.Factories.SubjectFactory;
-import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.Models.Student;
 import com.mycompany.project1.Models.Subjects.ISubject;

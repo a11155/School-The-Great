@@ -4,10 +4,10 @@
  */
 package com.mycompany.project1.States.Play;
 
-import com.mycompany.project1.Competitions.Competition;
+import com.mycompany.project1.Models.Competitions.Competition;
 import com.mycompany.project1.Factories.CompetitionFactory;
-import com.mycompany.project1.GUI.GUIFactory;
-import com.mycompany.project1.GUI.Play.CompetitionPanel;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.Play.CompetitionPanel;
 import com.mycompany.project1.States.GUIState;
 import com.mycompany.project1.States.State;
 import java.util.Observable;

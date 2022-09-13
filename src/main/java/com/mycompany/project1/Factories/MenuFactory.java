@@ -4,11 +4,11 @@
  */
 package com.mycompany.project1.Factories;
 
-import com.mycompany.project1.GUI.Menu.Menu;
-import com.mycompany.project1.GUI.Menu.MenuItem;
+import com.mycompany.project1.Factories.GUI.Menu.Menu;
+import com.mycompany.project1.Factories.GUI.Menu.MenuItem;
 import com.mycompany.project1.States.State;
-import com.mycompany.project1.GUI.Menu.Renderers.DialogRenderer;
-import com.mycompany.project1.GUI.Menu.Renderers.OptionRenderer;
+import com.mycompany.project1.Factories.GUI.Menu.Renderers.DialogRenderer;
+import com.mycompany.project1.Factories.GUI.Menu.Renderers.OptionRenderer;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.NullState;
 import java.util.ArrayList;

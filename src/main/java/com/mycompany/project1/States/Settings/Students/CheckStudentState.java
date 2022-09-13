@@ -4,8 +4,8 @@
  */
 package com.mycompany.project1.States.Settings.Students;
 
-import com.mycompany.project1.GUI.GUIFactory;
-import com.mycompany.project1.GUI.Menu.Menu;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.Menu.Menu;
 import com.mycompany.project1.Factories.MenuFactory;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.Models.Student;

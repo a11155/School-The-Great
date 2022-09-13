@@ -5,7 +5,7 @@
 package com.mycompany.project1.States.Play.Frames;
 
 import com.mycompany.project1.Factories.SubjectFactory;
-import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
 import com.mycompany.project1.Managers.SchoolManager;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.State;

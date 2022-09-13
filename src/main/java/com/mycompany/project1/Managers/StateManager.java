@@ -17,6 +17,8 @@ import com.mycompany.project1.States.Play.CompeteState;
 import com.mycompany.project1.States.Play.PlayState;
 import com.mycompany.project1.States.Play.TrainState;
 import com.mycompany.project1.States.Settings.InitState;
+import com.mycompany.project1.States.Settings.Schools.RemoveSchoolState;
+import com.mycompany.project1.States.Settings.Students.RemoveStudentState;
 import com.mycompany.project1.States.State;
 
 /**
@@ -53,36 +55,23 @@ public class StateManager {
     }
     private IState convertState(State.state state){
         
-        switch(state){
-            case settings:
-                return new SettingsState();
-            case mainMenu:
-                return new MainMenuState();
-            case editSchoolMenu:
-                return  new EditSchoolMenuState();
-            case addSchool:
-                return new AddSchoolState();
-            case checkSchool:
-                return new CheckSchoolState();
-            case editStudentMenu:
-                return new EditStudentMenuState();
-            case addStudent:
-                return new AddStudentState();
-            case checkStudent:
-                return new CheckStudentState();
-            case init:
-                return new InitState();
-            case play:
-                return new PlayState();
-            case compete:
-                return new CompeteState();
-            case train:
-                return new TrainState();
-                
-                
-            default:
-                return new NullState();
-        }
+        return switch (state) {
+            case settings -> new SettingsState();
+            case mainMenu -> new MainMenuState();
+            case editSchoolMenu -> new EditSchoolMenuState();
+            case addSchool -> new AddSchoolState();
+            case checkSchool -> new CheckSchoolState();
+            case editStudentMenu -> new EditStudentMenuState();
+            case addStudent -> new AddStudentState();
+            case checkStudent -> new CheckStudentState();
+            case init -> new InitState();
+            case play -> new PlayState();
+            case compete -> new CompeteState();
+            case train -> new TrainState();
+            case removeSchool -> new RemoveSchoolState();
+            case removeStudent -> new RemoveStudentState();
+            default -> new NullState();
+        };
         
     }
     

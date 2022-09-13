@@ -5,7 +5,7 @@
 package com.mycompany.project1.States.Settings.Students;
 
 import com.mycompany.project1.Factories.StudentFactory;
-import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
 import com.mycompany.project1.Models.Subjects.ISubject;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.Factories.SubjectFactory;

@@ -4,13 +4,13 @@
  */
 package com.mycompany.project1.States.Play;
 
-import com.mycompany.project1.GUI.Play.RankPanel;
-import com.mycompany.project1.GUI.Play.DashBoardPanel;
-import com.mycompany.project1.Competitions.Competition;
-import com.mycompany.project1.Competitions.MathCompetition;
-import com.mycompany.project1.Competitions.Prizes.SubjectPrize;
+import com.mycompany.project1.Factories.GUI.Play.RankPanel;
+import com.mycompany.project1.Factories.GUI.Play.DashBoardPanel;
+import com.mycompany.project1.Models.Competitions.Competition;
+import com.mycompany.project1.Models.Competitions.MathCompetition;
+import com.mycompany.project1.Models.Competitions.Prizes.SubjectPrize;
 import com.mycompany.project1.Factories.CompetitionFactory;
-import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
 import com.mycompany.project1.Managers.SchoolManager;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.GUIState;

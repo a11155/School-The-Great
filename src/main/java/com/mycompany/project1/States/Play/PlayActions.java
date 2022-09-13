@@ -4,7 +4,7 @@
  */
 package com.mycompany.project1.States.Play;
 
-import com.mycompany.project1.Competitions.Competition;
+import com.mycompany.project1.Models.Competitions.Competition;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.States.Play.Frames.CheckSchoolFrame;
 import com.mycompany.project1.States.Play.Frames.CompeteFrame;

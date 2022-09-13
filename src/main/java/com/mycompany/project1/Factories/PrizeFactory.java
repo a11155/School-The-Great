@@ -4,8 +4,8 @@
  */
 package com.mycompany.project1.Factories;
 
-import com.mycompany.project1.Competitions.Prizes.IPrize;
-import com.mycompany.project1.Competitions.Prizes.SubjectPrize;
+import com.mycompany.project1.Models.Competitions.Prizes.IPrize;
+import com.mycompany.project1.Models.Competitions.Prizes.SubjectPrize;
 
 /**
  *

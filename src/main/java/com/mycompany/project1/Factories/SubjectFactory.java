@@ -12,6 +12,7 @@ import com.mycompany.project1.Models.Subjects.PhilosophySubject;
 import com.mycompany.project1.Models.Subjects.GeographySubject;
 import com.mycompany.project1.Models.Subjects.LiteratureSubject;
 import com.mycompany.project1.Models.Subjects.ISubject;
+import com.mycompany.project1.STG;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;

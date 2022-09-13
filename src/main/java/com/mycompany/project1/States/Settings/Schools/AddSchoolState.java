@@ -4,8 +4,8 @@
  */
 package com.mycompany.project1.States.Settings.Schools;
 
-import com.mycompany.project1.GUI.DNDList;
-import com.mycompany.project1.GUI.GUIFactory;
+import com.mycompany.project1.Factories.GUI.DNDList;
+import com.mycompany.project1.Factories.GUI.GUIFactory;
 import com.mycompany.project1.Models.School;
 import com.mycompany.project1.Factories.SubjectFactory;
 import com.mycompany.project1.Managers.SchoolManager;

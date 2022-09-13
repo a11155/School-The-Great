@@ -68,6 +68,13 @@ public class School implements Serializable, Comparable<School> {
         SchoolManager.getInstance().serialize();
         
     }
+    
+    public void removeStudent(Student student){
+        students.remove(student);
+        SchoolManager.getInstance().serialize();
+      
+    }
+    
     public void addSubject(ISubject subject){
         this.subjects.add(subject);
         SchoolManager.getInstance().serialize();
